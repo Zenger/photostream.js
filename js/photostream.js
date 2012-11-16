@@ -13,7 +13,7 @@
   			instagram : {
             parse   : false, // Choose to grab images from instagram or not. Disable/Enable this module.
     				selector: "", // The jQuery Selector where all the instagram items will go, may be a jquery object.
-    				user    : "", // The instagram ID
+    				username    : "", // The instagram ID
     				apikey  : "", // your api key, you can grab it at http://instagram.com/developer/register/
     				limit   : 10, // per page items
             page    : 1,  // which page to show?
