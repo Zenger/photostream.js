@@ -53,7 +53,7 @@
   		
   		PS.instagram.fetch = function() {
 
-  			if (settings.instagram.userame === undefined || settings.instagram.username == "")
+  			if (settings.instagram.username === undefined || settings.instagram.username == "")
   			{
   				console.error("Instagram username is empty");
   				return false;
