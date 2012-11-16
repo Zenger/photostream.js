@@ -1,0 +1,17 @@
+.photostreamjs a 
+{
+	display:block;
+	float:left;
+	width:150px;
+	height:150px;
+	padding:15px;
+	background:url("../images/loading.gif") no-repeat center;
+}
+
+.photostreamjs  img {
+	opacity:0;
+}
+
+.clear {
+	clear:both;
+}

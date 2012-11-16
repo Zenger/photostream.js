@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Photostream.js - A photostream grabber</title>
+	<!-- Step 1, include jQuery -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- Step 2, include photostream.js -->
+	<script type="text/javascript" src="./js/photostream.js"></script>
+	<!-- Step 3, init photostream.js with settings and run -->
+	<script type="text/javascript">
+	jQuery(function() {
+		var settings = {
+			instagram : {
+				parse   : true, // enable Instagram
+				selector: jQuery("#instagram"), // Select the ID or the class to populate with instagram items
+				user    : "artoliver",
+				apikey  : "188312888.f79f8a6.1b920e7f642b4693a4cb346162bf7154", // your api key, you can grab it at http://instagram.com/developer/register/
+				limit   : 11,
+				items   : "<li class='instagram'><a title='{caption}' class='zoom' href='{src}'><img class='w150' alt='{caption}' src='{thumb}' /></a></li>" // this is not the default, it's just an example
+			},
+
+			flickr : {
+				parse    : true, // enable flickr
+				selector : jQuery('#flickr'),
+				user     : "irisabout",
+			},
+
+			dribbble : {
+				parse    :true,
+				selector : jQuery('#dribbble'),
+				user     : "dmott70" 
+			},
+
+			pinterest: {
+				parse:true,
+				
+			}
+		};
+		var photostream = jQuery.photostream(settings);
+
+		
+		jQuery('#instagram').bind('photostream.js_instagram_ready', function(items) {
+			jQuery('#instagram img').load(function() {
+				jQuery(this).animate({opacity:1}, 250);
+			});
+		});
+
+
+		jQuery('#flickr').bind('photostream.js_flickr_ready', function(items) {
+			jQuery('#flickr img').load(function() {
+				jQuery(this).animate({opacity:1}, 250);
+			});
+		});
+
+
+		jQuery('#dribbble').bind('photostream.js_dribbble_ready', function(items) {
+			jQuery('#dribbble img').load(function() {
+				jQuery(this).animate({opacity:1}, 250);
+			});
+		});
+
+
+
+	});
+	</script>
+
+	<!-- Optional, Eric Meyer Reset.css -->
+	<!-- Do not hotlink this url, download the file to your server, used only for demonstration -->
+	<link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+
+	<!-- Include Photostream.js css -->
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+	
+	<h2>Instagram</h2>
+	<div id="instagram">&nbsp;</div>
+
+	<br />
+	<br />
+	<hr />
+
+	<div class='clear'>&nbsp;</div>
+
+	<h2>Flickr</h2>
+	<div id="flickr">&nbsp;</div>
+
+	<br />
+	<br />
+	<hr />
+
+	<div class='clear'>&nbsp;</div>
+
+	<h2>Dribbble</h2>
+	<div id="dribbble">&nbsp;</div>
+
+	<br />
+	<br />
+	<hr />
+
+	<div class='clear'>&nbsp;</div>
+
+	<h2>Pinterest</h2>
+	<div id="pinterest">&nbsp;</div>
+
+	<br />
+	<br />
+	<hr />
+
+</body>
+</html>
