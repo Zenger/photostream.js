@@ -53,7 +53,7 @@
   		
   		PS.instagram.fetch = function() {
 
-  			if (settings.instagram.username === undefined || settings.instagram.username == "")
+  			if (settings.instagram.userame === undefined || settings.instagram.username == "")
   			{
   				console.error("Instagram username is empty");
   				return false;
@@ -72,12 +72,12 @@
   			}
 
 
-  			var url = "https://api.instagram.com/v1/users/search?q=" + settings.instagram.user + "&access_token=" + settings.instagram.apikey + "&count=10&callback=?";
+  			var url = "https://api.instagram.com/v1/users/search?q=" + settings.instagram.username + "&access_token=" + settings.instagram.apikey + "&count=10&callback=?";
   			jQuery.getJSON(url, function(data) {
   				jQuery.each(data.data, function(i, user) 
   				{
   					
-  					if (user.username == settings.instagram.user)
+  					if (user.username == settings.instagram.username)
   					{
   						PS.instagram.user_id = user.id;
 
